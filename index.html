@@ -3,203 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetCare Guide</title>
+  <title>PetCare Guide - Inicio</title>
   <style>
-    /* ===== CSS Variables ===== */
-    :root {
-      --primary: #4472C4;
-      --secondary: #2E75B6;
-      --accent: #70AD47;
-      --text: #333333;
-      --bg: #F5F7FA;
-    }
-
-    /* ===== Reset ===== */
+    :root { --primary: #4472C4; --secondary: #2E75B6; --accent: #70AD47; --text: #333; --bg: #F5F7FA; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ===== Base ===== */
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    /* ===== Navbar ===== */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--primary);
-      color: white;
-    }
-    .logo { font-size: 1.4rem; font-weight: bold; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+    
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: var(--primary); color: white; }
     .nav-links { list-style: none; display: flex; gap: 1.5rem; }
-    .nav-links a { color: white; text-decoration: none; font-size: 0.95rem; }
-    .nav-links a:hover { text-decoration: underline; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; }
 
-    /* ===== Hero ===== */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-    }
-    .hero h1 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+    .hero { text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+    .toggle-btns { margin-bottom: 1.5rem; }
+    .toggle-btns button { padding: 0.6rem 1.2rem; margin: 0 0.4rem; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; background: white; color: var(--primary); }
 
-    /* ===== Search Bar ===== */
-    .search-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .search-bar input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      outline: none;
-    }
-    .search-bar button {
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .search-bar button:hover { background: #5a9639; }
+    .search-bar { display: flex; justify-content: center; gap: 0.5rem; max-width: 500px; margin: 0 auto; }
+    .search-bar input { flex: 1; padding: 0.8rem; border: none; border-radius: 8px; }
+    .search-bar button { padding: 0.8rem 1.5rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; }
 
-    /* ===== Cards Grid ===== */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-
-    /* ===== Card ===== */
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-    .card:hover { transform: translateY(-4px); }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-info { padding: 1rem; }
-    .card-info h3 { margin-bottom: 0.4rem; font-size: 1rem; }
-    .card-info p { font-size: 0.85rem; color: #666; }
-
-    /* ===== Status messages ===== */
-    #results p {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: #666;
-      padding: 2rem;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.5rem; }
-      .nav-links { gap: 1rem; }
-      .cards-grid { padding: 1rem; gap: 1rem; }
-    }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; padding: 2rem; }
+    .card { background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
+    .card img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+    .card-info { padding: 1.2rem; }
+    .card-info h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .card-info p { font-size: 0.9rem; margin-bottom: 0.3rem; color: #555; }
+    .badge { display: inline-block; background: #e1e8f5; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-top: 0.5rem; }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">🐾 PetCare Guide</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="clima.html">Clima</a></li>
+    </ul>
+  </nav>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">🐾 PetCare Guide</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#buscador">Buscador</a></li>
-        <li><a href="#clima">Clima</a></li>
-      </ul>
-    </nav>
+  <header class="hero">
+    <h1>Guía de Cuidados y Razas</h1>
+    <div class="toggle-btns">
+      <button onclick="setModo('perros')">🐶 Perros</button>
+      <button onclick="setModo('gatos')">🐱 Gatos</button>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Buscar raza..." onkeydown="if(event.key==='Enter') buscarRaza()">
+      <button onclick="buscarRaza()">Buscar</button>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Encuentra todo sobre tu mascota</h1>
-      <div class="search-bar">
-        <input type="text" id="search" placeholder="Buscar raza..." onkeydown="if(event.key==='Enter') buscarRaza()">
-        <button onclick="buscarRaza()">Buscar</button>
-      </div>
-    </section>
+  <section id="results" class="cards-grid"></section>
 
-    <section id="results" class="cards-grid"></section>
-  </main>
-
-  <script>
-    /* ========== api.js — Módulo de consumo de APIs ========== */
-    const API_KEY_DOGS = 'TU_API_KEY_DOGS';
-    const WEATHER_KEY  = 'TU_API_KEY_WEATHER';
-
-    async function fetchRazasPerros(nombre = '') {
-      const url = nombre
-        ? `https://api.thedogapi.com/v1/breeds/search?q=${encodeURIComponent(nombre)}`
-        : 'https://api.thedogapi.com/v1/breeds?limit=20';
-      const res = await fetch(url, {
-        headers: { 'x-api-key': API_KEY_DOGS }
-      });
-      if (!res.ok) throw new Error('Error en la API de perros');
-      return await res.json();
-    }
-
-    async function fetchClima(ciudad) {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(ciudad)}&appid=${WEATHER_KEY}&units=metric&lang=es`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('Error en la API del clima');
-      return await res.json();
-    }
-
-    /* ========== app.js — Lógica principal ========== */
-    async function buscarRaza() {
-      const query     = document.getElementById('search').value.trim();
-      const resultados = document.getElementById('results');
-      resultados.innerHTML = '<p>Cargando...</p>';
-
-      try {
-        const razas = await fetchRazasPerros(query);
-        if (!razas || razas.length === 0) {
-          resultados.innerHTML = '<p>No se encontraron resultados.</p>';
-          return;
-        }
-        resultados.innerHTML = razas.map(raza => `
-          <div class="card" onclick="verDetalle(${raza.id})">
-            <img
-              src="${raza.image?.url || 'https://placehold.co/220x180?text=Sin+imagen'}"
-              alt="${raza.name}"
-              onerror="this.src='https://placehold.co/220x180?text=Sin+imagen'"
-            >
-            <div class="card-info">
-              <h3>${raza.name}</h3>
-              <p>${raza.bred_for || 'Raza de compañía'}</p>
-            </div>
-          </div>`).join('');
-      } catch (error) {
-        resultados.innerHTML = '<p>Error al cargar los datos. Intenta de nuevo.</p>';
-        console.error(error);
-      }
-    }
-
-    function verDetalle(id) {
-      // Navegar a página de detalle (extensión futura)
-      console.log('Ver detalle de raza ID:', id);
-      alert(`Detalle de raza ID: ${id}\n(Implementar página de detalle)`);
-    }
-
-    window.onload = () => buscarRaza();
-  </script>
-
+  <script src="api.js"></script>
+  <script src="app.js"></script>
 </body>
-</html>
+</html
